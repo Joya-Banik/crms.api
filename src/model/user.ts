@@ -1,11 +1,15 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
-    id : number;
+    @PrimaryColumn()
+    id : string;
+    @Column()
+    name : string;
     @Column()
     username : string;
+    @Column()
+    contact : string;
     @Column()
     password : string;
     @Column()

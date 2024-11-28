@@ -1,9 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Petitioner {
-    @PrimaryGeneratedColumn()
-    id : number;
+    @PrimaryColumn()
+    nid : number;
     @Column()
     name : string;
     @Column()
