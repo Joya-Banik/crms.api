@@ -14,5 +14,4 @@ export class Accused {
     status : string;
     @ManyToOne(()=>Fir)
     fir_id : number;
-
 }
