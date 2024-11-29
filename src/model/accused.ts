@@ -1,17 +1,26 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Fir } from "./fir";
+import { Fcase } from "./fcase";
 
 @Entity()
 export class Accused {
     @PrimaryGeneratedColumn()
-    id : number;
+    id : number
+
     @Column()
-    name : string;
+    name : string
+
     @Column()
-    gender : number;
+    gender : number
+
     @Column()
-    age : number;
+    age : number
+
+    @Column()
     status : string;
-    @ManyToOne(()=>Fir)
-    fir_id : number;
+
+    @ManyToMany(()=>Fcase, (Fcase)=> Fcase.id)
+    @JoinColumn()
+    fcase : Fcase[] 
+
 }

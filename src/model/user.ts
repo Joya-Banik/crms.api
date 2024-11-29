@@ -1,17 +1,23 @@
+import internal from "stream";
 import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User {
     @PrimaryColumn()
-    id : string;
+    id : string
+
     @Column()
-    name : string;
+    name : string
+
     @Column()
-    username : string;
+    username : string
+
     @Column()
-    contact : string;
+    contact : string
+
     @Column()
-    password : string;
+    password : string
+
     @Column()
     role : string;
 }

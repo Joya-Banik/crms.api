@@ -5,7 +5,6 @@ import { sign_up_result, user_dto } from 'src/dto/user';
 import { LoginResult, User, UserLogin } from 'src/model/user';
 import { Equal, Repository } from 'typeorm';
 import * as bycrypt from 'bcrypt';
-import { equal } from 'assert';
 
 @Injectable()
 export class UserService {

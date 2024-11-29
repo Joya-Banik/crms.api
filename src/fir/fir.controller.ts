@@ -1,14 +1,18 @@
-import { Body, Controller, Delete, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Post, Req } from '@nestjs/common';
 import { FirService } from './fir.service';
+import { Fir_Dto } from 'src/dto/fir_dto';
 
-@Controller('fir')
+@Controller('api/fir')
 export class FirController {
     constructor(private firService: FirService) {}
+    
     @Post()
-    function (@Body() fir : any) : any {
-        return "";
+    async addFir(@Body() fir : Fir_Dto) : Promise<number> {
+        return await this.firService.addFir(fir);
     }
+
     @Get()
-    @Put()
-    @Delete()
+    async getFir(@Req() req : any) {
+        return await this.firService.getFir(req.query.id)
+    }
 }

@@ -1,16 +1,21 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Petitioner } from "./petitioner";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { User } from "./user";
 
 @Entity()
 export class Fir{
     @PrimaryGeneratedColumn()
-    id : number;
-    @Column('date')
-    date_lodged : Date;
-    @Column('date')
-    inscident_data : Date;
-    @Column('time')
-    inscident_time : Date;
-    @ManyToOne((() => Petitioner))
-    petitioner : number;
+    id : number
+
+    @Column()
+    date_lodged : Date
+
+    @Column()
+    inscident_date : Date
+
+    @Column()
+    place : string
+
+    @ManyToOne(() => User, (User) => User.id)
+    @JoinColumn()
+    petitioner : User;
 }
