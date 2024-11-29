@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Post, Req } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req } from '@nestjs/common';
 import { FirService } from './fir.service';
 import { Fir_Dto } from 'src/dto/fir_dto';
 
